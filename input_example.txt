@@ -1,0 +1,20 @@
+# Sequences are fasta formatted. Note,
+# any line starting with # are skipped
+# Note: assumption is that each primer
+# is on one line, i.e. no line wrapping 
+# is at present allowed.
+>Arah3N-F
+aagcttaccatatagcccatacagcc
+#does this work?
+>Arah3N-R
+gatgtttccaccttcgttttcttct
+>carya-F
+ccgcgaagagaaagcagag
+XXXXXXX
+>carya-R
+tcatgtctcgacctgagtcc
+>Cora1-F
+AAGATAGTGGCATCCCCTCA
+>Cora1-R
+CCAGCCTTAATCTGCTCGTC
+XXXXX
