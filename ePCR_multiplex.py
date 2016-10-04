@@ -31,24 +31,30 @@ def make_pair(p1, p2):
     out = p1.name + "_&_" + p2.name + "\t" + p1.seq + "\t" + p2.seq + "\n"
     return out
 
-def print_pairs(primers, outfile):
+def print_pairs(primers, outfile, selfprimer):
     with open(outfile, "w") as fo:
         for primerA in primers:
             for primerB in primers:
-                if primerA == primerB:
-                    continue
-                else:
-                    out = make_pair(primerA, primerB)
-                    fo.write(out)
+                print "sf", selfprimer
+                if not selfprimer:
+                    print "sf is not", selfprimer
+                    if primerA == primerB:
+                        print "is comp run, and is it the same? yes"
+                        continue
+                print "else, i.e"
+                out = make_pair(primerA, primerB)
+                fo.write(out)
                 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--primer", help="name of file containing primers", required=True)
     parser.add_argument("-o", "--outfile", help="name of output file", required=True)
+    parser.add_argument("-s", "--selfprimer", help="specify this if a primer should also be paired with itself", action="store_true", default=False)
     args = parser.parse_args()
+    print args
 
     primers = read_fasta(args.primer)
-    print_pairs(primers, args.outfile)
+    print_pairs(primers, args.outfile, args.selfprimer)
 
 if __name__ == "__main__":
     main()
