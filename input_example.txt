@@ -5,16 +5,14 @@
 # is at present allowed.
 >Arah3N-F
 aagcttaccatatagcccatacagcc
-#does this work?
+# This allows for comments, will not be read
 >Arah3N-R
 gatgtttccaccttcgttttcttct
 >carya-F
 ccgcgaagagaaagcagag
-XXXXXXX
 >carya-R
 tcatgtctcgacctgagtcc
 >Cora1-F
 AAGATAGTGGCATCCCCTCA
 >Cora1-R
 CCAGCCTTAATCTGCTCGTC
-XXXXX
