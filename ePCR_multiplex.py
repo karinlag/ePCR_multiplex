@@ -35,13 +35,9 @@ def print_pairs(primers, outfile, selfprimer):
     with open(outfile, "w") as fo:
         for primerA in primers:
             for primerB in primers:
-                print "sf", selfprimer
                 if not selfprimer:
-                    print "sf is not", selfprimer
                     if primerA == primerB:
-                        print "is comp run, and is it the same? yes"
                         continue
-                print "else, i.e"
                 out = make_pair(primerA, primerB)
                 fo.write(out)
                 
@@ -51,7 +47,6 @@ def main():
     parser.add_argument("-o", "--outfile", help="name of output file", required=True)
     parser.add_argument("-s", "--selfprimer", help="specify this if a primer should also be paired with itself", action="store_true", default=False)
     args = parser.parse_args()
-    print args
 
     primers = read_fasta(args.primer)
     print_pairs(primers, args.outfile, args.selfprimer)
